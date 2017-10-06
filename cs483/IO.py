@@ -33,9 +33,6 @@ def getInput():
         s = f.read()
         return s
 
-#def getOutput(w):
-#    with open(args.output_file, "wb") as w:
-
 def getIV():
     if (args.optional_IV_file != None):
         with open(args.optional_IV_file, "rb") as f:
