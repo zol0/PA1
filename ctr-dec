@@ -1,2 +1,2 @@
 #!/bin/sh
-python3.5 source/ctr_dec.py "$@"
+python3.6 source/ctr_dec.py "$@"
