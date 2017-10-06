@@ -1,3 +1,9 @@
+'''
+Karnauch, Andrey
+CS483 - IO module
+Processes input arguments using argparse
+'''
+
 import sys
 import binascii
 import argparse
@@ -23,17 +29,30 @@ elif (args.output_file == None):
     print("Rerun using '-h' for help", file=sys.stderr)
     sys.exit()
 
+'''
+Reads key in from the file provided via command line arguments
+@return: returns the hex encoded string as a byte string
+'''
 def getKey():
     with open(args.key_file, "rb") as k:
         key = k.read()
         key = binascii.unhexlify(key)
         return key
 
+'''
+Reads input in from the file provided via command line arguments
+@return: returns the byte string
+'''
 def getInput():
     with open(args.input_file, "rb") as f:
         s = f.read()
         return s
 
+'''
+Reads IV in from the file provided via command line arguments
+@return: returns the hex encoded string as a byte string
+@return: if no IV file provided, returns None
+'''
 def getIV():
     if (args.optional_IV_file != None):
         with open(args.optional_IV_file, "rb") as f:
