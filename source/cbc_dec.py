@@ -1,8 +1,19 @@
+'''
+Karnauch, Andrey
+CS483 - cbc_dec.py
+Decrypts using AES CBC mode with own padding
+'''
 from cs483 import AESHelper
 from cs483 import IO
 
 BSIZE = 16
 
+'''
+Decrypts message
+@param a: an AESHelper object to access AES ECB functions
+@param msg: the result of cbc-enc
+@return: a decrypted byte string with padding of cbc-enc still appended
+'''
 def cbcdec(a,msg):
     iv = msg[:BSIZE]
     i = BSIZE
@@ -16,7 +27,7 @@ def cbcdec(a,msg):
     
     return decMsg
 
-if __name__ == "__main__":
+if __name__ == "__main__": #Processes input, decrypts, unpads, and prints to a file
 
     key = IO.getKey()
     msg = IO.getInput()
