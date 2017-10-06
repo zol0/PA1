@@ -28,6 +28,7 @@ def getKey():
         key = k.read()
         key = binascii.unhexlify(key)
         return key
+
 def getInput():
     with open(args.input_file, "rb") as f:
         s = f.read()
